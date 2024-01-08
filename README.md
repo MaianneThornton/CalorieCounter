@@ -97,9 +97,10 @@ prev.addEventListener('click', () => {
 });
 ``` -->
 
-<!-- ### Useful resources📖
+### Useful resources📖
 
-- [Resource](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/) - This is an amazing article which helped me write better commit messages. I'd recommend it to anyone still learning this concept. -->
+- [Resource](https://www.freecodecamp.org/news/learn-javascript-with-new-data-structures-and-algorithms-certification-projects/) - This is an amazing article which details the updated freeCodeCamp curriculum.
+- [Resource](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/) - This is an amazing article which helped me write better commit messages. I'd recommend it to anyone still learning this concept.
 
 ## Author🔎
 
