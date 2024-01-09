@@ -22,3 +22,8 @@ function cleanInputString(str) {
     const regex = /[+-\s]/g;
     return str.replace(regex, "");
 };
+//Filters out number inputs allowed for exponential notation (such as 1e10).
+function isInvalidInput(str) {
+    const regex = /\d+e\d+/i;
+    return str.match(regex);
+}
