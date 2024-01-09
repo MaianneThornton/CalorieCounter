@@ -19,7 +19,7 @@ This is a project in the [Learn Basic JavaScript Algorithms and Data Structures]
 
 ## Overview👋🏾
 
-Welcome to the #<sup>2nd</sup> project of the course! While I already earned my certification, I thought it would be fun to go through the course again since its just been revamped. You can now learn JavaScript by building 21 projects, and I will be detailing each one 😊.
+Welcome to the <sup>2nd</sup> project of the course! While I already earned my certification, I thought it would be fun to go through the course again since its just been revamped. You can now learn JavaScript by building 21 projects, and I will be detailing each one 😊.
 
 ### The project😥
 
