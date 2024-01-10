@@ -32,7 +32,8 @@ function isInvalidInput(str) {
 function addEntry() {
     const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
     //numbers the entries a user adds, returns a NodeList
-    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+    // .length + 1 fixes the counting bug where the first entry had a value of 0.
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
     const HTMLString = `
     <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
     <input type="text" placeholder="Name" id="${entryDropdown.value}-${entryNumber}-name"></input>
