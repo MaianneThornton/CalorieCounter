@@ -41,3 +41,5 @@ function addEntry() {
     `;
     targetInputContainer.innerHTML += HTMLString;
 };
+
+addEntryButton.addEventListener('click', addEntry);
