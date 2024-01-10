@@ -44,4 +44,23 @@ function addEntry() {
     targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 };
 
+// get the calorie counts from the user's entries.
+function getCaloriesFromInputs(list) {
+    let calories = 0;
+
+    for (let i = 0; i < list.length; i++) {
+        const currVal = cleanInputString(list[i].value);
+        const invalidInputMatch = isInvalidInput(currVal);
+        //checks to see if invalidInputMatch is truthy because it invalidInputMatch returns String.match (array of matches or null if no matches are found)
+        if (invalidInputMatch) {
+            alert(`Invalid Input: ${invalidInputMatch[0]}`);
+            isError = true;
+            return null;
+        }
+        calories += Number(currVal);
+    }
+    return calories;
+
+};
+
 addEntryButton.addEventListener('click', addEntry);
