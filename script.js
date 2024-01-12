@@ -60,7 +60,51 @@ function getCaloriesFromInputs(list) {
         calories += Number(currVal);
     }
     return calories;
-
 };
 
+//prevents submission of page to trigger reload
+function calculateCalories(e) {
+    e.preventDefault();
+    isError = false;
+    //return any number inputs that are in the meals elements
+    const breakfastNumberInputs = document.querySelectorAll('#breakfast input[type=number]');
+    const lunchNumberInputs = document.querySelectorAll('#lunch input[type=number]');
+    const dinnerNumberInputs = document.querySelectorAll('#dinner input[type=number]');
+    const snacksNumberInputs = document.querySelectorAll('#snacks input[type=number]');
+    const exerciseNumberInputs = document.querySelectorAll('#exercise input[type=number]');
+
+    //extract the calorie totals from meals & budget
+    const breakfastCalories = getCaloriesFromInputs(breakfastNumberInputs);
+    const lunchCalories = getCaloriesFromInputs(lunchNumberInputs);
+    const dinnerCalories = getCaloriesFromInputs(dinnerNumberInputs);
+    const snacksCalories = getCaloriesFromInputs(snacksNumberInputs);
+    const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs);
+    const budgetCalories = getCaloriesFromInputs([budgetNumberInput]);
+    //checks the truthiness of the global error flag, and if it is truthy then use return to end the function execution.
+    if (isError) {
+        return null;
+    }
+
+    // Calculations
+    const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
+    const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
+
+    //ternary operator to set surplusOrDeficit to the string Surplus or Deficit depending on whether remainingCalories is greater than or equal to 0. If it is greater than or equal to 0, then surplusOrDeficit should be Surplus. Otherwise, it should be Deficit.
+    const surplusOrDeficit = (remainingCalories >= 0) ? 'Surplus' : 'Deficit';
+
+    //Math.abs() ensures that the value is positive.
+    output.innerHTML = `
+    <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calorie ${surplusOrDeficit}</span>
+  <hr>
+  <p>${budgetCalories} Calories Budgeted</p>
+  <p>${consumedCalories} Calories Consumed</p>
+  <p>${exerciseCalories} Calories Burned</p>
+    `;
+    //make the #output element visible so the user can see the text. 
+    output.classList.remove("hide");
+    
+};
+
+//button functionality
 addEntryButton.addEventListener('click', addEntry);
+calorieCounter.addEventListener('submit', calculateCalories);
