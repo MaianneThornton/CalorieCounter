@@ -15,7 +15,7 @@ This is a project in the [Learn Basic JavaScript Algorithms and Data Structures]
   - [Code snippets](#im-really-proud-of-these-code-snippets%EF%B8%8F)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+<!-- - [Acknowledgments](#acknowledgments) -->
 
 ## Overview👋🏾
 
@@ -28,79 +28,59 @@ In this project users will be able to:
 - Validate user input, perform calculations based on that input, and dynamically update your interface to display the results. 
 - This project covers basic regular expressions, template literals, the addEventListener() method, and more.
 
-<!-- ### Screenshot🌇
+### Screenshot🌇
 
-![](./screenshot.png) -->
+![](./screenshot.png)
 
-<!-- ### Links👩🏾‍💻
+### Links👩🏾‍💻
 
-- Live Site URL: (https://frolicking-biscotti-f94d2f.netlify.app/) -->
+- Live Site URL: (https://maianne-caloriecounter.netlify.app/)
 
-<!-- ## My process💭
+## My process💭
 
-This is a simple project that I started by marking out initial structure, classes, and id's in HTML. Next I finalized the UI by styling the CSS. I styled both the light and dark modes, the clock hands, and the digital output as well as the date section. I then added functionality by way of JavaScript to switch between light and dark modes when the user clicks on the button. I also made the clock hands functional by utilizing the Date() constructor, and mapped the range of hours minutes and seconds to 360 degrees in order to make the analog clock functional. -->
+This is a simple project that started by marking out initial structure, classes, and id's in HTML. The CSS was given to us with the beginning docs, along with the HTML boilerplate.  Functionality was added by way of JavaScript to allow users to enter their calorie budget, consumed calories, and exercise calories. The app then can then calculate the remaining calories. Users can also clear the form at any time.
 
-<!-- ### Built with👷🏾‍♀️
+### Built with👷🏾‍♀️
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
-- JavaScript -->
+- JavaScript
 
-<!-- ### What I learned👩🏾‍🏫
+### What I learned👩🏾‍🏫
 
-I learned the logic behind making a simple progress bar functional. I will be applying this to future projects where needed.
+This project was a review of basic JavaScript methods. I was able to refresh my memory and practice accessing data in arrays and objects, if/else statements, loops, accessing and updating the DOM, and methods such as .split, .replace, .match, .toLowerCase and Math.abs.
 
-I also learned that when using the before or after selectors you MUST add content for the style to be visible. -->
+I was also able to brush up on my regex, which is something I have not used in quite a while.
 
-<!-- ### Continued development🔮
+### Continued development🔮
 
-In the future I plan on continuing to practice positioning elements using flexbox, and using different selectors such as nth of type to select elements.
+In the future I plan on continuing to practice using different selectors to be more precise when select elements.
+
+I plan on using more regex in my code as regular expressions can easily condense large blocks of code with ease, and the more I work with them the better I get!
 
 I also plan on continuing to practice using event listeners to make my pages more functional.
 
-I also plan on continuing to learn the best ways to phrase git commits, so that future viewers can fully understand the changes that have occurred. -->
+I plan on continuing to learn the best ways to phrase git commits, so that future viewers can fully understand the changes that have occurred.
 
-<!-- ### I'm really proud of these code snippets✂️
-
-```css
-.progress-container::before {
-  content: '';
-  background-color: var(--line-border-empty);
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  height: 4px;
-  width: 100%;
-  z-index: -1;
-}
-```
+### I'm really proud of these code snippets✂️
 
 ```js
-next.addEventListener('click', () => {
-  currentActive++;
+const regex = /[+-\s]/g;
+    return str.replace(regex, "");
+};
 
-  if (currentActive > circles.length) {
-    currentActive = circles.length;
-  }
-  update();
-});
-
-prev.addEventListener('click', () => {
-  currentActive--;
-
-  if (currentActive < 1) {
-    currentActive = 1;
-  }
-  update();
-});
-``` -->
+//Filters out number inputs allowed for exponential notation (such as 1e10).
+function isInvalidInput(str) {
+    const regex = /\d+e\d+/i;
+    return str.match(regex);
+};
+```
 
 ### Useful resources📖
 
-- [Resource](https://www.freecodecamp.org/news/learn-javascript-with-new-data-structures-and-algorithms-certification-projects/) - This is an amazing article which details the updated freeCodeCamp curriculum.
-- [Resource](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/) - This is an amazing article which helped me write better commit messages. I'd recommend it to anyone still learning this concept.
+- [Resource 1](https://www.freecodecamp.org/news/learn-javascript-with-new-data-structures-and-algorithms-certification-projects/) - This is an amazing article which details the updated freeCodeCamp curriculum.
+- [Resource 2](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) - This guide which helped me write regular expressions. I'd recommend it to anyone still learning this concept or needing to look up a method or property.
+- [Resource 3](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/) - This is an amazing article which helped me write better commit messages. I'd recommend it to anyone still learning this concept.
 
 ## Author🔎
 
@@ -110,6 +90,5 @@ prev.addEventListener('click', () => {
 - Twitter - [@MaianneThornton](https://twitter.com/MaianneThornton)
 - LinkedIn - [@MaianneThornton](https://www.linkedin.com/in/maiannethornton/)
 
-<!-- ## Acknowledgments🙏🏾
+<!-- ## Acknowledgments🙏🏾 -->
 
-Special Thanks go to [Brad Traversy](http://www.traversymedia.com/) and [Florin Pop](http://www.florin-pop.com/) creating the course and making reviewing concepts fun 😊. -->
