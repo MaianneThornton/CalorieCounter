@@ -7,7 +7,7 @@ const output = document.getElementById("output");
 
 let isError = false;
 
-//Even though I set an input element to be a number, JavaScript receives a string value. Function to cleans the string value and ensure I have a number.
+//Even though input element is set to be a number, JavaScript receives a string value. Function cleans the string value and ensures a number.
 function cleanInputString(str) {
     const strArray = str.split('');
     const cleanStrArray = [];
@@ -18,10 +18,11 @@ function cleanInputString(str) {
     //     }
     // }
 
-    //Completes the above in much simpler code
+    //Completes the above in much simpler code via regex
     const regex = /[+-\s]/g;
     return str.replace(regex, "");
 };
+
 //Filters out number inputs allowed for exponential notation (such as 1e10).
 function isInvalidInput(str) {
     const regex = /\d+e\d+/i;
@@ -40,6 +41,7 @@ function addEntry() {
     <label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
     <input type="number" min="0" placeholder="Calories" id="${entryDropdown.value}-${entryNumber}-calories"></input>
     `;
+
     // inserts HTMLString as the last child of the targetInputContainer
     targetInputContainer.insertAdjacentHTML('beforeend', HTMLString);
 };
@@ -80,6 +82,7 @@ function calculateCalories(e) {
     const snacksCalories = getCaloriesFromInputs(snacksNumberInputs);
     const exerciseCalories = getCaloriesFromInputs(exerciseNumberInputs);
     const budgetCalories = getCaloriesFromInputs([budgetNumberInput]);
+
     //checks the truthiness of the global error flag, and if it is truthy then use return to end the function execution.
     if (isError) {
         return null;
@@ -100,6 +103,7 @@ function calculateCalories(e) {
   <p>${consumedCalories} Calories Consumed</p>
   <p>${exerciseCalories} Calories Burned</p>
     `;
+
     //make the #output element visible so the user can see the text. 
     output.classList.remove("hide");
 };
@@ -111,6 +115,7 @@ function clearForm() {
     for (let i = 0; i < inputContainers.length; i++) {
         inputContainers[i].innerHTML = '';
     }
+
     budgetNumberInput.value = '';
     output.innerText = '';
     output.classList.add("hide");
