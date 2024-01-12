@@ -102,9 +102,21 @@ function calculateCalories(e) {
     `;
     //make the #output element visible so the user can see the text. 
     output.classList.remove("hide");
-    
 };
+
+//the ability for a user to clear the form
+function clearForm() {
+    //document.querySelectorAll returns a NodeList, which is array-like but is not an array. The Array object has a .from() method that accepts an array-like and returns an array. This is helpful when you want access to more robust array methods
+    const inputContainers = Array.from(document.querySelectorAll('.input-container'));
+    for (let i = 0; i < inputContainers.length; i++) {
+        inputContainers[i].innerHTML = '';
+    }
+    budgetNumberInput.value = '';
+    output.innerText = '';
+    output.classList.add("hide");
+}
 
 //button functionality
 addEntryButton.addEventListener('click', addEntry);
 calorieCounter.addEventListener('submit', calculateCalories);
+clearButton.addEventListener('click', clearForm);
